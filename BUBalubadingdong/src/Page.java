@@ -6,13 +6,14 @@
 
 /**
  *
- * @author lukas
+ * @author rodec8600
  */
 public class Page extends javax.swing.JFrame {
 
     /**
      * Creates new form Page
      */
+    //String output;
     public Page() {
         initComponents();
     }
@@ -26,17 +27,58 @@ public class Page extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPanel1 = new javax.swing.JPanel();
+        frame = new javax.swing.JInternalFrame();
+        body = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        frame.setAutoscrolls(true);
+        frame.setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/A little bit bigger.png"))); // NOI18N
+        frame.setName(frame.getTitle());
+        frame.setVisible(true);
+
+        body.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
+        body.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        javax.swing.GroupLayout frameLayout = new javax.swing.GroupLayout(frame.getContentPane());
+        frame.getContentPane().setLayout(frameLayout);
+        frameLayout.setHorizontalGroup(
+            frameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, 583, Short.MAX_VALUE)
+        );
+        frameLayout.setVerticalGroup(
+            frameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(frame)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(frame)
+        );
+
+        try {
+            frame.setIcon(true);
+        } catch (java.beans.PropertyVetoException e1) {
+            e1.printStackTrace();
+        }
+        frame.getAccessibleContext().setAccessibleName(frame.getTitle());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -76,7 +118,21 @@ public class Page extends javax.swing.JFrame {
             }
         });
     }
+    
+    public void displayTitle(String output){
+        
+        frame.setTitle(output);
+        System.out.println("egg: " + frame.getTitle());
+    } 
+    
+    public void displayBody(String output){
+        //jTextPane1.setText(output);
+        body.setText("<html>"+output+"</html>");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel body;
+    private javax.swing.JInternalFrame frame;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
